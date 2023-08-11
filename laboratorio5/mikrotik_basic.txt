@@ -41,7 +41,7 @@ config={
 
 /ip dns set servers=8.8.8.8,2.2.2.2 allow-remote-requests=yes
 /ip firewall nat add chain=srcnat action=masquerade out-interface="ether2"
-/ip firewall nat add chain=dstnat dst-port=80 protocol=tcp action=dst-nat to-address="192.168.2.10" to-port=8080
+/ip firewall nat add chain=dstnat dst-port=80 protocol=tcp action=dst-nat to-address="192.168.2.10" to-port=9000
 /ip route add dst-address="0.0.0.0/0" gateway=ether2 #########################
 
 
