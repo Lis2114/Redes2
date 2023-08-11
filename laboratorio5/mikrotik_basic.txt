@@ -7,6 +7,7 @@ config={
 /system identity set name=RM
 
 /interface bridge add name=bridge_lan
+/interface bridge port add bridge=bridge_lan interface=ether3
 /interface bridge port add bridge=bridge_lan interface=ether4
 /interface bridge port add bridge=bridge_lan interface=ether5
 
@@ -21,17 +22,17 @@ config={
 /interface list add name="WAN 1"
 /interface list member add interface="ether1" list="WAN 1"
 /interface comment ether1 comment="WAN 1"
-/interface list add name="INTERNET"
+/interface list add name="LAN"
 /interface list member add interface="ether3" list="LAN"
 /interface comment ether3 comment="LAN"
 
 /ip address add address=10.1.1.0/24 interface=ether1
 /ip address add address=10.2.1.0/24 interface=ether2
-/ip address add address=192.168.100.1/24 interface=bridge_lan
-/ip pool add name=pool_dhcp_lan ranges=192.168.100.100-192.168.100.200
+/ip address add address=192.168.2.1/24 interface=bridge_lan
+/ip pool add name=pool_dhcp_lan ranges=192.168.2.100-192.168.2.200
 
 /ip dhcp-server add name=dhcp_lan interface=bridge_lan address-pool=pool_dhcp_lan disabled=no
-/ip dhcp-server network add address=192.168.100.0/24 gateway=192.168.100.1 dns-server=8.8.8.8,2.2.2.2
+/ip dhcp-server network add address=192.168.2.0/24 gateway=192.168.2.1 dns-server=8.8.8.8,2.2.2.2
 /ip dhcp-client add interface=ether3 disabled=no
 
 /ip dhcp-server lease add address="192.168.100.10" client-id="RM-master" server="dhcp_lan" mac-address=[/ip dhcp-server lease get number=0 mac-address]
@@ -39,7 +40,6 @@ config={
 /ip dhcp-server lease set address="192.168.100.10" client-id="RM-master" numbers=0 
 
 /ip dns set servers=8.8.8.8,2.2.2.2 allow-remote-requests=yes
-
 /ip firewall nat add chain=srcnat action=masquerade out-interface="ether3"
 /ip firewall nat add chain=dstnat dst-port=80 protocol=tcp action=dst-nat to-address="192.168.100.10" to-port=8080
 /ip route add dst-address="0.0.0.0/0" gateway=ether3 #########################
