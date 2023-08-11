@@ -15,18 +15,18 @@ config={
 /interface list member add interface="bridge_lan" list="LAN"
 /interface comment ether4 comment="LAN"
 /interface comment ether5 comment="LAN"
-/interface list add name="WAN 2"
-/interface list member add interface="ether2" list="WAN 2"
-/interface comment ether2 comment="WAN 2"
 /interface list add name="WAN M"
-/interface list member add interface="ether1" list="WAN M"
-/interface comment ether1 comment="WAN M"
+/interface list member add interface="ether2" list="WAN M"
+/interface comment ether2 comment="WAN M"
+/interface list add name="WAN 1"
+/interface list member add interface="ether1" list="WAN 1"
+/interface comment ether1 comment="WAN 1"
 /interface list add name="INTERNET"
-/interface list member add interface="ether3" list="INTERNET"
-/interface comment ether3 comment="WAN M"
+/interface list member add interface="ether3" list="LAN"
+/interface comment ether3 comment="LAN"
 
-/ip address add address=10.100.1.1/24 interface=ether1
-/ip address add address=10.2.1.100/24 interface=ether2
+/ip address add address=10.1.1.0/24 interface=ether1
+/ip address add address=10.2.1.0/24 interface=ether2
 /ip address add address=192.168.100.1/24 interface=bridge_lan
 /ip pool add name=pool_dhcp_lan ranges=192.168.100.100-192.168.100.200
 
