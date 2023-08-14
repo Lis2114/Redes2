@@ -50,7 +50,7 @@ $ git config --global user.email johndoe@example.com
 ## 3. [Caracterización de los adaptadores](#) ✔
 |Parámetro||Valor|
 |--|:--:|--:|
-|Número de adaptadores Físicos|-->|3|
+|Número de adaptadores Físicos|-->|1|
 |Número de adaptadores Virtuales|-->|7|
 |Tipo de Adaptador principal|-->|Wi-fi|
 |Fabricante del Adaptador principal|-->|Liteon Technology Corporation|
@@ -93,12 +93,12 @@ $ git config --global user.email johndoe@example.com
 ## 6. [Retardo de la red](#) ✔
 |Servidor|IP|Tiempo promedio/ms|
 |--|--|--|
-|DNS Google|8.8.8.8||
-|DNS Cloudflare|1.1.1.1||
-|OpenDNS|208.67.222.222||
-|Alternate DNS|76.76.19.19||
-|DNS Quad9|9.9.9.9||
-|AdGuard DNS|94.140.14.14||
+|DNS Google|8.8.8.8| 27ms|
+|DNS Cloudflare|1.1.1.1|33ms|
+|OpenDNS|208.67.222.222|137ms|
+|Alternate DNS|76.76.19.19|26ms|
+|DNS Quad9|9.9.9.9|64ms|
+|AdGuard DNS|94.140.14.14|141ms|
 
 >Nota: Para calcular el retardo de la red, usaremos el protocolo ICMP/[ping][12] con al menos 10 paquetes.
 
