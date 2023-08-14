@@ -106,10 +106,10 @@ $ git config --global user.email johndoe@example.com
 ## 7. [Capacidad del canal](#) ✔
 |Servidor|Ping/ms|Down/MB|Up/MB|
 |--|:--:|--:|--:|
-|[speed test][1]|39|96.4|69.2|
-|[Netflix][2]|14|78|67|
-|[Claro][3]|13|74|31|
-|[nperf][4]|6.7|93.6|54.98|
+|[speed test][1]|35|5.59|5.59|
+|[Netflix][2]|5.1|24|46|
+|[Claro][3]|31|5.6|5.8|
+|[nperf][4]|39.10|5.891|5.784|
 
 >Nota: Para calcular el retardo de la red, usaremos el protocolo HTTP via servicio WEB.
 
@@ -117,7 +117,7 @@ $ git config --global user.email johndoe@example.com
 ## 8. [Distancia desde el host](#) ✔
 |Servidor|Ping/ms|Numero de Saltos|
 |--|:--:|--:|
-|google.com|14|10|
+|google.com|28|30|
 |GMail.com|15|9|
 |YouTube.com|14|10|
 |dns.google|15|9|
