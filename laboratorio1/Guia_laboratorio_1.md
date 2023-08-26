@@ -40,22 +40,27 @@ $ git config --global user.email johndoe@example.com
 ## 2. [Preguntas reflexivas de ambientación](#) ✔
 
 <ol type="a">
-<li>¿Cual es la dirección de red y de broadcast de un host que tiene una ip 192.168.10.10/30?.</li>
-<li>¿Que información se puede inferir de un host con la dirección 169.254.255.200/26?.</li>
-<li>¿Cuantas sub-redes puede lograr con la mascara 172.16.0.0/22?.</li>
-<li>¿Cuantos clientes puede tener la sub red 172.16.0.0/22?.</li>
-<li>¿Que clase y tipo de dirección es 10.10.10.0/24?.</li>
+<li>¿Cual es la dirección de red y de broadcast de un host que tiene una ip 192.168.10.10/30?.
+R// la direccion de red es 192.168.10.0  y la de broadcast es 192.168.10.255</li>
+<li>¿Que información se puede inferir de un host con la dirección 169.254.255.200/26?
+.</li>
+<li>¿Cuantas sub-redes puede lograr con la mascara 172.16.0.0/22?
+R/ 7 subredes .</li>
+<li>¿Cuantos clientes puede tener la sub red 172.16.0.0/22?.
+R/30 clientes por cada subred</li>
+<li>¿Que clase y tipo de dirección es 10.10.10.0/24?.
+R/clase A, tipo de direcion: de red</li>
 </ol>
 
 ## 3. [Caracterización de los adaptadores](#) ✔
 |Parámetro||Valor|
 |--|:--:|--:|
 |Número de adaptadores Físicos|-->|1|
-|Número de adaptadores Virtuales|-->|7|
+|Número de adaptadores Virtuales|-->|1|
 |Tipo de Adaptador principal|-->|Wi-fi|
-|Fabricante del Adaptador principal|-->|Liteon Technology Corporation|
-|Código MAC del fabricante|-->|3C-A0-67|
-|MAC|-->|3C-A0-67-E8-D8-77|
+|Fabricante del Adaptador principal|-->|Multicom|
+|Código MAC del fabricante|-->|28-CD-C4-A0-B7-1D|
+|MAC|-->|28-CD-C4-A0-B7-1E|
 
 >Nota: Para obtener los parámetros de la red, usaremos los comandos [ipconfig][10], [ifconfig][8], [getmac][9].
 
@@ -63,15 +68,15 @@ $ git config --global user.email johndoe@example.com
 ## 4. [Caracterización de la red](#) ✔
 |Parámetro|Valor|
 |--|--:|
-|__Subnet__|192.168.254.0/24|
-|IPv4|192.168.254.104|
-|Subnet Mask decimal|24|
+|__Subnet__|192.168.1.0/24|
+|IPv4| 192.168.1.44|
+|Subnet Mask decimal||
 |Subnet Mask octetos|255.255.255.0|
 |Número de direcciones de Host|254|
-|Rango de direcciones de Host|192.168.254.1-254|
-|IP Broadcast|192.168.254.255|
-|Server DHCP|192.168.254.254|
-|Server DNS|8.8.8.8|
+|Rango de direcciones de Host|192.168.1.1-254|
+|IP Broadcast|192.168.1.255|
+|Server DHCP|192.168.1.254|
+|Server DNS||
 
 >Nota: Para obtener los parámetros de la red, usaremos el comando [ipconfig][10] o [ifconfig][8].
 
@@ -118,17 +123,17 @@ $ git config --global user.email johndoe@example.com
 |Servidor|Ping/ms|Numero de Saltos|
 |--|:--:|--:|
 |google.com|28|30|
-|GMail.com|15|9|
-|YouTube.com|14|10|
-|dns.google|15|9|
-|aws.amazon.com|154|17|
-|portal.azure.com|13|11|
-|login.live.com|88|22|
-|Facebook.com|120|11|
-|c.ns.WhatsApp.net|151|12|
-|claro.com.co|151|12|
-|platzi.com|122|11|
-|rappi.com.co|184|30|
+|GMail.com|27|11|
+|YouTube.com|60|11|
+|dns.google|23|11|
+|aws.amazon.com|38|15|
+|portal.azure.com|23|22|
+|login.live.com|91|19|
+|Facebook.com|23|11|
+|c.ns.WhatsApp.net|107|18|
+|claro.com.co|0|25|
+|platzi.com|25|9|
+|rappi.com.co|0|13|
 
 >Nota: Para calcular el retardo de la red, usaremos el comando ICMP/[tracert][13].
 
